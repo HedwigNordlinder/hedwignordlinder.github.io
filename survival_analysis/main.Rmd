@@ -1,0 +1,81 @@
+---
+title: "Time to event versus Logistic Regression"
+author: "Hedwig Nora Nordlinder"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: tango
+    code_folding: show
+tags: [R, survival analysis]
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width = 10, 
+  fig.height = 6,
+  out.width = "100%"
+)
+
+# Load required packages
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+```
+
+## Introduction
+
+Brief introduction to your blog post topic. What will readers learn? Why is this important?
+
+## Data Preparation
+
+```{r data-prep}
+# Your data preparation code here
+# Example:
+# data <- read_csv("your_data.csv")
+```
+
+## Analysis
+
+### Exploratory Data Analysis
+
+```{r eda}
+# Your exploratory analysis code here
+```
+
+### Key Findings
+
+Discuss your main findings here. You can include:
+
+- Important observations
+- Unexpected results
+- Practical implications
+
+## Visualizations
+
+```{r visualizations}
+# Your visualization code here
+# Example:
+# ggplot(data, aes(x = x, y = y)) +
+#   geom_point() +
+#   theme_minimal()
+```
+
+## Conclusions
+
+Summarize your key takeaways and potential next steps.
+
+## References
+
+<!-- If you're using citations, they'll appear here -->
+
+## Session Info
+
+```{r session-info}
+sessionInfo()
+```
