@@ -72,48 +72,69 @@
             return urlParams.get(param);
         }
 
-        // Function to load and render markdown content
-        async function loadMarkdown() {
+        // Function to load content
+        async function loadContent() {
             try {
-                // Get the markdown file path from URL parameter
-                const mdFile = getQueryParam('md') || 'README.md';
+                // Get the file path from URL parameter
+                const file = getQueryParam('md') || 'README.md';
+                const isHtml = file.endsWith('.html');
                 
-                // Fetch the markdown file
-                const response = await fetch(mdFile);
-                if (!response.ok) throw new Error('Failed to load markdown file');
+                // Fetch the file
+                const response = await fetch(file);
+                if (!response.ok) throw new Error('Failed to load file');
                 
-                const markdown = await response.text();
+                const content = await response.text();
                 
-                // Configure marked options
-                marked.setOptions({
-                    highlight: function(code, lang) {
-                        if (lang && hljs.getLanguage(lang)) {
-                            return hljs.highlight(code, { language: lang }).value;
-                        }
-                        return hljs.highlightAuto(code).value;
-                    },
-                    breaks: true,
-                    gfm: true
-                });
-                
-                // Render the markdown
-                document.getElementById('content').innerHTML = marked.parse(markdown);
+                if (isHtml) {
+                    // For HTML files, create a temporary container
+                    const temp = document.createElement('div');
+                    temp.innerHTML = content;
+                    
+                    // Extract the body content if it exists
+                    const bodyContent = temp.querySelector('body');
+                    document.getElementById('content').innerHTML = bodyContent ? bodyContent.innerHTML : content;
+                    
+                    // Apply any scripts that were in the original HTML
+                    const scripts = temp.getElementsByTagName('script');
+                    Array.from(scripts).forEach(script => {
+                        const newScript = document.createElement('script');
+                        Array.from(script.attributes).forEach(attr => {
+                            newScript.setAttribute(attr.name, attr.value);
+                        });
+                        newScript.textContent = script.textContent;
+                        document.body.appendChild(newScript);
+                    });
+                } else {
+                    // For markdown files, use marked to render
+                    marked.setOptions({
+                        highlight: function(code, lang) {
+                            if (lang && hljs.getLanguage(lang)) {
+                                return hljs.highlight(code, { language: lang }).value;
+                            }
+                            return hljs.highlightAuto(code).value;
+                        },
+                        breaks: true,
+                        gfm: true
+                    });
+                    
+                    document.getElementById('content').innerHTML = marked.parse(content);
+                }
                 
                 // Apply syntax highlighting to code blocks
                 document.querySelectorAll('pre code').forEach((block) => {
                     hljs.highlightBlock(block);
                 });
             } catch (error) {
-                console.error('Error loading markdown:', error);
+                console.error('Error loading content:', error);
                 document.getElementById('content').innerHTML = `
                     <h1>Error</h1>
-                    <p>Failed to load markdown content. Please make sure the file exists and is accessible.</p>
+                    <p>Failed to load content. Please make sure the file exists and is accessible.</p>
                 `;
             }
         }
 
-        // Load markdown content when the page loads
-        window.addEventListener('load', loadMarkdown);
+        // Load content when the page loads
+        window.addEventListener('load', loadContent);
     </script>
 </body>
 </html>
