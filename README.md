@@ -8,6 +8,7 @@ A minimalist, responsive academic homepage, hosted with GitHub Pages at
 
 - Edit the biography, research interests, education, and contact information
   directly in `index.html`.
+- Replace `cv.pdf` to update the CV linked in the top navigation.
 - Add `photo.jpg` to the repository root and replace the photograph placeholder
   with the `<img>` example in the adjacent HTML comment.
 - Copy a `<li>...</li>` block under **Published / accepted** or **Preprints** for
