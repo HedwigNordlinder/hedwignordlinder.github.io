@@ -59,27 +59,34 @@
 
     .portrait {
       flex: 0 0 auto;
-      width: 8rem;
-      height: 9.5rem;
+      width: 9rem;
       margin: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    }
+
+    .portrait img {
+      display: block;
+      width: 100%;
+      height: auto;
       border: 1px solid #bbb;
-      background: #f7f7f7;
+    }
+
+    .portrait figcaption {
+      margin-top: 0.35rem;
       color: #666;
-      font-size: 0.9rem;
-      object-fit: cover;
+      font-size: 0.8rem;
+      text-align: center;
     }
 
     main > p { margin: 1.5rem 0; }
     section { margin-top: 2rem; }
     h2 { margin: 0 0 1rem; font-size: 1.3rem; font-weight: normal; }
     h3 { margin: 1.3rem 0 0.6rem; font-size: 1rem; }
+    .news { list-style: none; margin: 0; padding: 0; }
+    .news li { display: grid; grid-template-columns: 6.5rem minmax(0, 1fr); gap: 1rem; margin-bottom: 0.6rem; }
+    .news time { color: #555; font-variant-numeric: tabular-nums; white-space: nowrap; }
     .papers { padding-left: 1.3rem; margin: 0; }
     .papers li { padding-left: 0.2rem; margin-bottom: 1.1rem; }
     .paper-title { font-style: italic; }
-    .placeholder { color: #666; }
     .paper-details { display: block; }
     .contribution-note { font-size: 0.9rem; margin: 0.5rem 0; }
     .education { padding-left: 1.3rem; }
@@ -96,7 +103,7 @@
       body { margin: 1.8rem auto; padding: 0 1rem; }
       header { flex-direction: column; gap: 1.3rem; }
       h1 { font-size: 1.75rem; }
-      .portrait { width: 7rem; height: 8.5rem; }
+      .news li { grid-template-columns: 1fr; gap: 0.1rem; }
     }
   </style>
 </head>
@@ -108,15 +115,14 @@
       <h1>Hedwig Nora Nordlinder</h1>
       <p class="affiliation">First-year PhD student<br><a href="https://ki.se/en/people/hedwig-nordlinder">Karolinska Institutet</a></p>
       <nav aria-label="Main navigation">
-        <a href="#papers">Papers</a><span aria-hidden="true">·</span><a href="#education">Education</a><span aria-hidden="true">·</span><a href="cv.pdf">CV (PDF)</a><span aria-hidden="true">·</span><a href="#contact">Contact</a>
+        <a href="#news">News</a><span aria-hidden="true">·</span><a href="#papers">Papers</a><span aria-hidden="true">·</span><a href="#education">Education</a><span aria-hidden="true">·</span><a href="cv.pdf">CV (PDF)</a><span aria-hidden="true">·</span><a href="#contact">Contact</a>
       </nav>
     </div>
 
-    <!-- Replace this placeholder with:
-      <img class="portrait" src="photo.jpg" alt="Hedwig Nora Nordlinder" width="144" height="171">
-      Then add your photo.jpg to the repository root.
-    -->
-    <div class="portrait" role="img" aria-label="Placeholder for a portrait photograph">[Photograph]</div>
+    <figure class="portrait">
+      <img src="photo.png" alt="Hedwig Nora Nordlinder standing on a beach beside a turquoise surfboard" width="1016" height="1418">
+      <figcaption>ICLR 2026</figcaption>
+    </figure>
   </header>
 
   <main id="main">
@@ -128,6 +134,21 @@
 
     <p>My research interests are flow matching and diffusion models, Bayesian statistics,
       and phylogenetics.</p>
+
+    <section id="news" aria-labelledby="news-heading">
+      <h2 id="news-heading">News</h2>
+      <!-- Add new <li> entries at the top, with the newest update first. -->
+      <ul class="news">
+        <li>
+          <time datetime="2026-09-25">2026-09-25</time>
+          <span>Two papers accepted to NeurIPS 2026 Sydney</span>
+        </li>
+        <li>
+          <time datetime="2026-08-10">2026-08-10</time>
+          <span>Started PhD at Karolinska Institutet</span>
+        </li>
+      </ul>
+    </section>
 
     <section id="papers" aria-labelledby="papers-heading">
       <h2 id="papers-heading">Papers</h2>

@@ -9,8 +9,8 @@ A minimalist, responsive academic homepage, hosted with GitHub Pages at
 - Edit the biography, research interests, education, and contact information
   directly in `index.html`.
 - Replace `cv.pdf` to update the CV linked in the top navigation.
-- Add `photo.jpg` to the repository root and replace the photograph placeholder
-  with the `<img>` example in the adjacent HTML comment.
+- Replace `photo.png` to change the photograph; update the image dimensions,
+  alternative text, and caption in `index.html` if needed.
 - Copy a `<li>...</li>` block under **Published / accepted** or **Preprints** for
   additional papers. Link titles to a DOI or preprint page, for example:
 
@@ -33,6 +33,21 @@ Keep the email as plain, obfuscated text:
 ```html
 <p>Email: hedwig [dot] nordlinder [at] ki [dot] se</p>
 ```
+
+## Posting news
+
+In `index.html`, find `<ul class="news">` and add a new entry at the top so the
+newest news appears first. Set both the visible date and `datetime` to the same
+date in `YYYY-MM-DD` format:
+
+```html
+<li>
+  <time datetime="2026-11-23">2026-11-23</time>
+  <span>Your news update here</span>
+</li>
+```
+
+Commit and push `index.html` to `main` to publish the update.
 
 ## Preview locally
 
