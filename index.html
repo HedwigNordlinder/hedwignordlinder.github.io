@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Academic homepage of Hedwig Nora Nordlinder. Research, publications, preprints, and contact information.">
+  <meta name="description" content="Hedwig Nora Nordlinder, PhD student at Karolinska Institutet. Research in flow matching and diffusion models, Bayesian statistics, and phylogenetics.">
   <title>Hedwig Nora Nordlinder</title>
   <!-- Keep previously shared ?md=... links working in the original notes viewer. -->
   <script>
@@ -72,7 +72,7 @@
       object-fit: cover;
     }
 
-    main > p { margin: 1.5rem 0 2rem; }
+    main > p { margin: 1.5rem 0; }
     section { margin-top: 2rem; }
     h2 { margin: 0 0 1rem; font-size: 1.3rem; font-weight: normal; }
     h3 { margin: 1.3rem 0 0.6rem; font-size: 1rem; }
@@ -81,6 +81,10 @@
     .paper-title { font-style: italic; }
     .placeholder { color: #666; }
     .paper-details { display: block; }
+    .education { padding-left: 1.3rem; }
+    .education li { padding-left: 0.2rem; margin-bottom: 0.9rem; }
+    .education-details { display: block; }
+    .profile-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; }
 
     #contact { border-top: 1px solid #aaa; padding-top: 1.3rem; }
     address { font-style: normal; }
@@ -101,10 +105,9 @@
   <header>
     <div>
       <h1>Hedwig Nora Nordlinder</h1>
-      <!-- Replace the bracketed text with your affiliation. -->
-      <p class="affiliation placeholder">[Position]<br>[Department]<br>[University or institution]</p>
+      <p class="affiliation">PhD student<br><a href="https://ki.se/en/people/hedwig-nordlinder">Karolinska Institutet</a></p>
       <nav aria-label="Main navigation">
-        <a href="#papers">Papers</a><span aria-hidden="true">·</span><a href="#contact">Contact</a>
+        <a href="#papers">Papers</a><span aria-hidden="true">·</span><a href="#education">Education</a><span aria-hidden="true">·</span><a href="#contact">Contact</a>
       </nav>
     </div>
 
@@ -116,31 +119,64 @@
   </header>
 
   <main id="main">
-    <!-- Add a short introduction here. -->
-    <p class="placeholder">[A few sentences about your research interests and current work.]</p>
+    <p>I am a PhD student at Karolinska Institutet, supervised by
+      <a href="https://ki.se/personer/benjamin-murrell">Ben Murrell</a>,
+      <a href="https://ki.se/personer/gunilla-karlsson-hedestam">Gunilla Karlsson-Hedestam</a>,
+      <a href="https://www.alextong.net/">Alexander Tong</a>, and
+      <a href="https://www.su.se/english/research/research-catalogue/research-groups/6/group-norberg">Jon Norberg</a>.</p>
+
+    <p>My research interests are flow matching and diffusion models, Bayesian statistics,
+      and phylogenetics.</p>
 
     <section id="papers" aria-labelledby="papers-heading">
       <h2 id="papers-heading">Papers</h2>
 
-      <h3>Published</h3>
+      <!-- Paper list and venue classifications checked against Google Scholar,
+           with NeurIPS 2026 entries confirmed in the conference programme. -->
+      <h3>Published / accepted</h3>
       <ul class="papers">
-        <!-- Copy a <li> for each paper. Link the title to its DOI or journal page,
-             and add a PDF link if available. Keep the most recent papers first. -->
-        <li class="placeholder">
-          <span class="paper-title">[Title of published paper]</span>
-          <span class="paper-details">[Authors]</span>
-          <span class="paper-details">[Journal], [volume], [pages], [year].</span>
+        <li>
+          <a class="paper-title" href="https://arxiv.org/abs/2605.20547">Latent Process Generator Matching</a>
+          <span class="paper-details">Lukas Billera, Hedwig Nora Nordlinder, Ben Murrell.</span>
+          <span class="paper-details"><a href="https://neurips.cc/virtual/2026/poster/155816">NeurIPS 2026</a>.</span>
+        </li>
+        <li>
+          <a class="paper-title" href="https://arxiv.org/abs/2511.09465">Branching Flows: Discrete, Continuous, and Manifold Flow Matching with Splits and Deletions</a>
+          <span class="paper-details">Lukas Billera, Hedwig Nora Nordlinder, Jack Collier Ryder, Anton Oresten, Aron Stålmarck, Theodor Mosetti Björk, Ben Murrell.</span>
+          <span class="paper-details"><a href="https://neurips.cc/virtual/2026/poster/155589">NeurIPS 2026</a>.</span>
         </li>
       </ul>
 
       <h3>Preprints</h3>
       <ul class="papers">
-        <!-- Copy a <li> for each preprint. Link the title to arXiv or another
-             preprint server, and add a PDF link if available. -->
-        <li class="placeholder">
-          <span class="paper-title">[Title of preprint]</span>
-          <span class="paper-details">[Authors]</span>
-          <span class="paper-details">[Preprint server or identifier], [year].</span>
+        <li>
+          <a class="paper-title" href="https://arxiv.org/abs/2511.16599">Time dependent loss reweighting for flow matching and diffusion models is theoretically justified</a>
+          <span class="paper-details">Lukas Billera, Hedwig Nora Nordlinder, Ben Murrell.</span>
+          <span class="paper-details">arXiv:2511.16599, 2025.</span>
+        </li>
+        <li>
+          <a class="paper-title" href="https://doi.org/10.1101/2025.11.03.686219">Spontaneous Emergence of Symmetry in a Generative Model of Protein Structure</a>
+          <span class="paper-details">Anton Oresten, Kenta Sato, Aron Stålmarck, Lukas Billera, Hedwig Nora Nordlinder, Jack Collier Ryder, Mateusz Kaduk, Ben Murrell.</span>
+          <span class="paper-details">bioRxiv, 2025.</span>
+        </li>
+        <li>
+          <a class="paper-title" href="https://doi.org/10.1101/2025.05.19.654647">difFUBAR: Scalable Bayesian comparison of adaptive evolution</a>
+          <span class="paper-details">Hassan Sadiq, Patrick Truong, Maximilian Danielsson, Venkatesh Kumar, Hedwig Nora Nordlinder, Darren Patrick Martin, Ben Murrell.</span>
+          <span class="paper-details">bioRxiv, 2025.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="education" aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <ul class="education">
+        <li>
+          BSc in Mathematics, Stockholm University
+          <span class="education-details">September 2023 – June 2026</span>
+        </li>
+        <li>
+          BSc in Mathematical Statistics, Stockholm University
+          <span class="education-details">September 2023 – December 2025</span>
         </li>
       </ul>
     </section>
@@ -148,13 +184,15 @@
     <section id="contact" aria-labelledby="contact-heading">
       <h2 id="contact-heading">Contact</h2>
       <address>
-        <!-- When ready, replace [email address] with:
-          <a href="mailto:you@university.edu">you@university.edu</a>
-        -->
-        <p>Email: <span class="placeholder">[email address]</span></p>
-        <p>Office: <span class="placeholder">[building and room, institution]</span></p>
-        <p><a href="https://github.com/HedwigNordlinder">GitHub</a></p>
+        <p>Email: <a href="mailto:hedwig.nordlinder@ki.se">hedwig.nordlinder@ki.se</a></p>
+        <p>Address: Biomedicum, Solnavägen 9, 171 65 Solna, Sweden</p>
       </address>
+      <p class="profile-links">
+        <a href="https://scholar.google.com/citations?user=7M4EylUAAAAJ">Google Scholar</a>
+        <a href="https://www.linkedin.com/in/hedwig-nora-nordlinder-147029170/">LinkedIn</a>
+        <a href="https://x.com/HeNordlinder">Twitter / X</a>
+        <a href="https://github.com/HedwigNordlinder">GitHub</a>
+      </p>
     </section>
   </main>
 

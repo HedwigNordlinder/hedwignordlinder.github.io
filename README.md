@@ -4,22 +4,28 @@ A minimalist, responsive academic homepage, hosted with GitHub Pages at
 <https://hedwignordlinder.github.io/>. The homepage is plain HTML and CSS in
 `index.html`; no build step or dependencies are needed.
 
-## Personalize
+## Updating the homepage
 
-- Replace the bracketed placeholders in `index.html` with your position,
-  affiliation, short introduction, email, and office details.
+- Edit the biography, research interests, education, and contact information
+  directly in `index.html`.
 - Add `photo.jpg` to the repository root and replace the photograph placeholder
   with the `<img>` example in the adjacent HTML comment.
-- Replace the example entry under **Published** and **Preprints**, then copy its
-  `<li>...</li>` block for additional papers. Remove the `placeholder` class from
-  completed entries. Link titles to a DOI or preprint page, for example:
+- Copy a `<li>...</li>` block under **Published / accepted** or **Preprints** for
+  additional papers. Link titles to a DOI or preprint page, for example:
 
   ```html
   <a class="paper-title" href="https://doi.org/YOUR-DOI">Your paper title</a>
   ```
 
-- Remove the `placeholder` class from completed affiliation/introduction text,
-  and update the date in the footer when you make changes.
+- Update the date in the footer when you make changes.
+
+The paper list was checked against
+[Google Scholar](https://scholar.google.com/citations?user=7M4EylUAAAAJ) on
+23 November 2026. The two NeurIPS 2026 papers were also confirmed in the
+[conference programme](https://neurips.cc/Downloads/2026). Paper titles and author
+lists link to arXiv or bioRxiv; contact information comes from the public
+[KI profile](https://ki.se/en/people/hedwig-nordlinder). These are static entries,
+so new papers and changes in publication status need a manual update.
 
 Example contact link:
 
