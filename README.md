@@ -27,10 +27,10 @@ lists link to arXiv or bioRxiv; contact information comes from the public
 [KI profile](https://ki.se/en/people/hedwig-nordlinder). These are static entries,
 so new papers and changes in publication status need a manual update.
 
-Example contact link:
+Keep the email as plain, obfuscated text:
 
 ```html
-<a href="mailto:you@university.edu">you@university.edu</a>
+<p>Email: hedwig [dot] nordlinder [at] ki [dot] se</p>
 ```
 
 ## Preview locally
